@@ -196,12 +196,12 @@ namespace CollectionsMasterConsoleUI
         {
        //non destructively create a dummy array
        int[] newArray = new int[50];
-                        //assign reversed values from array submitted as argument to new array
+         //reverse values
        for (int i = 0; i < array.Length; i++)
             {
    newArray[i] = array[array.Length - 1 - i];
                         }
-                        //replace argument values with new array values
+     // update arguments with arrays   
     for (int i = 0; i < array.Length; i++)
             {
        array[i] = newArray[i];
