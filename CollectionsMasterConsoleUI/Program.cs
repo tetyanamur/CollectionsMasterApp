@@ -23,10 +23,10 @@ namespace CollectionsMasterConsoleUI
             Console.WriteLine($"{num[0]}");
             //TODO: Print the last number of the array
             Console.WriteLine("Last num");
-            Console.WriteLine(num[num.Length-1]);
+            Console.WriteLine(num[num.Length - 1]);
             Console.WriteLine("All Numbers Original");
             //UNCOMMENT this method to print out your numbers from arrays or lists
-           NumberPrinter(num);
+            NumberPrinter(num);
             Console.WriteLine("-------------------");
 
             //TODO: Reverse the contents of the array and then print the array out to the console.
@@ -40,9 +40,9 @@ namespace CollectionsMasterConsoleUI
 
             Console.WriteLine("---------REVERSE CUSTOM------------");
             Array.Reverse(num);
-           
+
             Console.WriteLine("-------------------");
-            Rever
+
 
             //TODO: Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
             Console.WriteLine("Multiple of three = 0: ");
@@ -53,8 +53,8 @@ namespace CollectionsMasterConsoleUI
             //TODO: Sort the array in order now
             /*      Hint: Array.____()      */
             Console.WriteLine("Sorted numbers:");
-            var sorted = numbers.OrderBy(x => x);
-           Array.Sort(num);
+
+            Array.Sort(num);
             NumberPrinter(num);
 
             Console.WriteLine("\n************End Arrays*************** \n");
@@ -69,13 +69,13 @@ namespace CollectionsMasterConsoleUI
 
             //TODO: Print the capacity of the list to the console
             Console.WriteLine("capacity");
-             Console.WriteLine(IntList.Count);
+            Console.WriteLine(IntList.Count);
 
             //TODO: Populate the List with 50 random numbers between 0 and 50 you will need a method for this            
             Populater(IntList);
 
             //TODO: Print the new capacity
-            
+
 
             Console.WriteLine("new capacity");
             Console.WriteLine(IntList.Count);
@@ -88,9 +88,9 @@ namespace CollectionsMasterConsoleUI
             bool sucess = int.TryParse(userName, out userNumInt);
             if (sucess)
             {
-                NumberChecker(IntList, userNumInt)
+                NumberChecker(IntList, userNumInt);
             }
-            
+
             Console.WriteLine("-------------------");
 
             Console.WriteLine("All Numbers:");
@@ -103,7 +103,7 @@ namespace CollectionsMasterConsoleUI
             Console.WriteLine("Evens Only!!");
             OddKiller(IntList);
             NumberPrinter(IntList);
-            
+
             Console.WriteLine("------------------");
 
             //TODO: Sort the list then print results
@@ -121,7 +121,7 @@ namespace CollectionsMasterConsoleUI
         }
 
         private static void ThreeKiller(int[] num)
-        { foreach (int = 0; i < num.Length; i++)
+        { foreach (int = 0; i < num.Length; i++) 
             {
                 if (num[i] % 3 == 0)
                 {
@@ -133,79 +133,77 @@ namespace CollectionsMasterConsoleUI
                 Console.WriteLine(i);
             }
         }
-            private static void OddKiller(List<int> numberList)
+        private static void OddKiller(List<int> numberList)
+        {
+            var tarVal = new List<int>();
+
+            for (int i = 0; i < numberList.Count; i++)
             {
-                var tarVal = new List<int>();
-
-                for (int i = 0; i < numberList.Count; i++)
+                if (numberList[i] % 2 == 0)
                 {
-                    if (numberList[i] % 2 == 0)
-                    {
-                        tarVal.Add(numberList[i]);
-                    }
-                }
-
-                numberList.Clear();
-                foreach (int i in tarValues) {
-                    numberList.Add(i);
-
+                    tarVal.Add(numberList[i]);
                 }
             }
+
+            numberList.Clear();
+            foreach (int i in tarVal) {
+                numberList.Add(i);
+
+            }
+        }
+
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {
-        bool numberFound = false;
-             Console.WriteLine("checking your number....");
-             foreach (int number in numberList)
-                    {
-                        if (number == searchNumber)
-                        {
-                            Console.WriteLine($"Your number {searchNumber} was found in the list!");
-                            numberFound = true;
-                            break;
-                        }
-                    }
-                    if (numberFound == false) { Console.WriteLine("Your number was not found."); }
+            bool numberFound = false;
+            Console.WriteLine("checking your number....");
+            foreach (int number in numberList)
+            {
+                if (number == searchNumber)
+                {
+                    Console.WriteLine($"Your number {searchNumber} was found in the list!");
+                    numberFound = true;
+                    break;
                 }
-                }
+            }
+            if (numberFound == false) { Console.WriteLine("Your number was not found."); }
+        }
 
-        private static void 
+
+        private static void
         Populater(List<int> numberList)
         {
             for (int i = 0; i < 50; i++)
 
-            {
-
-                Random rng = new Random();
-                num[i] = rng.Next(0, 50);
+            { Random rng = new Random();
+                numberList[i] = rng.Next(0, 50);
             }
         }
         private static void Populater(int[] numbers)
-            {
-                for (int i = 0; i < numbers.Length; i++)
-                {
-                    Random rng = new Random();
-                    numbers[i] = rng.Next(51);
-                }
-            
-            {
-          
-
-        private static void ReverseArray(int[] array)
         {
-       //create new array
-       int[] newArray = new int[50];
-         //reverse values
-       for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-   newArray[i] = array[array.Length - 1 - i];
-       }
-     // update arguments with arrays     
-    for (int i = 0; i < array.Length; i++)
+                Random rng = new Random();
+                numbers[i] = rng.Next(51);
+            }
+
+
+            private static void ReverseArray(int[] array)
             {
-       array[i] = newArray[i];
-             }
-             }
-         }
+                //create new array
+                int[] newArray = new int[50];
+                //reverse values
+                for (int i = 0; i < array.Length; i++)
+                {
+                    newArray[i] = array[array.Length - 1 - i];
+                }
+                // update arguments with arrays     
+                for (int i = 0; i < array.Length; i++)
+                {
+                    array[i] = newArray[i];
+                }
+            }
+        }
+
 
         /// <summary>
         /// Generic print method will iterate over any collection that implements IEnumerable<T>
@@ -222,3 +220,4 @@ namespace CollectionsMasterConsoleUI
         }
     }
 }
+
