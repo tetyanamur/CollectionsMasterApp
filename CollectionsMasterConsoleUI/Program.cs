@@ -187,11 +187,6 @@ namespace CollectionsMasterConsoleUI
                 {
                     newArray[i] = array[array.Length - 1 - i];
                 }
-                     
-                for (int i = 0; i < array.Length; i++)
-                {
-                    array[i] = newArray[i];
-                }
             }
         }
 
