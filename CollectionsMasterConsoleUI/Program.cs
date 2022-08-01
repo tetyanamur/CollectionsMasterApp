@@ -17,7 +17,7 @@ namespace CollectionsMasterConsoleUI
             var num = new int[50];
             //TODO: Create a method to populate the number array with 50 random numbers that are between 0 and 50
 
-           Populater(num);
+            Populater(num);
             //TODO: Print the first number of the array
             Console.WriteLine("First num");
             Console.WriteLine($"{num[0]}");
@@ -121,42 +121,41 @@ namespace CollectionsMasterConsoleUI
         }
 
         private static void ThreeKiller(int[] num)
-        { foreach (int = 0; i < numbers.Length; i++)
+        { foreach (int = 0; i < num.Length; i++)
             {
                 if (num[i] % 3 == 0)
                 {
                     num[i] = 0;
                 }
             }
-        }
-         foreach (int i in numbers) 
-            { 
+            foreach (int i in num) {
+
                 Console.WriteLine(i);
             }
-
-            private static void OddKiller(List<int> numberList)
-        {
-        var tarVal = new List<int>();
-        
-            for (int i = 0; i < numberList.Count; i++)
-        {
-            if (numberList[i] % 2 == 0)
-            {
-                tarVal.Add(numberList[i]);
-            }
         }
+            private static void OddKiller(List<int> numberList)
+            {
+                var tarVal = new List<int>();
 
-               numberList.Clear();
-                foreach (int i in tarValues) { 
-                numberList.Add(i);
-            
+                for (int i = 0; i < numberList.Count; i++)
+                {
+                    if (numberList[i] % 2 == 0)
+                    {
+                        tarVal.Add(numberList[i]);
+                    }
+                }
 
+                numberList.Clear();
+                foreach (int i in tarValues) {
+                    numberList.Add(i);
+
+                }
+            }
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {
-                {
-                    bool numberFound = false;
-                    Console.WriteLine("checking your number....");
-                    foreach (int number in numberList)
+        bool numberFound = false;
+             Console.WriteLine("checking your number....");
+             foreach (int number in numberList)
                     {
                         if (number == searchNumber)
                         {
@@ -167,18 +166,17 @@ namespace CollectionsMasterConsoleUI
                     }
                     if (numberFound == false) { Console.WriteLine("Your number was not found."); }
                 }
+                }
 
-               
-        }
-
-        private static void Populater(List<int> numberList)
+        private static void 
+        Populater(List<int> numberList)
         {
             for (int i = 0; i < 50; i++)
 
             {
 
                 Random rng = new Random();
-                numbers[i] = rng.Next(0, 50);
+                num[i] = rng.Next(0, 50);
             }
         }
         private static void Populater(int[] numbers)
