@@ -194,14 +194,14 @@ namespace CollectionsMasterConsoleUI
 
         private static void ReverseArray(int[] array)
         {
-       //non destructively create a dummy array
+       //create new array
        int[] newArray = new int[50];
          //reverse values
        for (int i = 0; i < array.Length; i++)
             {
    newArray[i] = array[array.Length - 1 - i];
-                        }
-     // update arguments with arrays   
+       }
+     // update arguments with arrays     
     for (int i = 0; i < array.Length; i++)
             {
        array[i] = newArray[i];
